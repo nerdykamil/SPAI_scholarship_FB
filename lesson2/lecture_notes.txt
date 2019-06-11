@@ -1,0 +1,5 @@
+1. vectors are an instance of tensors
+2. tensors are a generalization of vectors and tensors
+3. tensors with only one dim are vectors
+4. there are also 3d tensors eg image
+
