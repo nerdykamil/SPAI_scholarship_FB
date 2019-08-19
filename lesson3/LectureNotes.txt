@@ -1,0 +1,13 @@
+Definitions
+
+Differential privacy
+- It ensures that different kind of statistical analysis don't comprimise privacy.
+
+
+Privacy
+- Privacy is when the analyzer doesn't know a thing about the people in the dataset after the analysis
+- when you don't want information about you to dont leak at all
+- you will not be affected, adversely or otherwise, by allowing your data to be used in any study or analysis no matter what other studies, data sets or information sources are available
+
+
+- if we remove a person from the database and the query doesn't change then that person's privacy is fully connected

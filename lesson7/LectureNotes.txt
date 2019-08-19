@@ -1,0 +1,44 @@
+Federated Learning
+A technique for training machine learning models on data which you donot have access to,
+what you do is train the model on the machine where the data resides rather than training it on the cloud and upload the model on cloud server
+
+Examples
+
+1 - models on SmartPhones - So in case of text messages the text predictive model is trained on your phone with your own data and later at the end of day or week the new (smarter) model is sent back to the server and an update is made of all the new models from different users!
+
+2 - Models in Cars: Federated Learning can be used to predict when your need maintenance, so the model is present in the system of the car and based on your driving pattern, engine and other params it is able to predict the next oil change requirement by your car 
+
+3 - Wearable medical Devices: So in case you wear such gadgets which monitor your heart rate, sleep cycle etc. You are not generating enough data to train a model so then you are able to benefit from the data from all other people
+
+4. Web browsers: when you are typing the url of website it tries to predict and complete it for you
+
+Federated Learning is important because of privacy concerns, where users or companies might not want to upload data on a central server: 
+1. In the case of medical scenarios the data is pretty sensitive
+2. In case of cars, honda wouldn't want toyota to know when their cars broke down and so forth
+
+Apart from privacy federated learning is also important because of engineering constraints because often or not there isn't much bandwidth which allows you to upload data to a cloud so training locally is preferred.
+
+PySyft is a toolkit which allows us to perform federated learning
+Pytorch has an extension of Pysyft - which allows us to do federated learning on a distributed dataset
+
+- With federated learning you can train models in parallel on distributed machines
+- use pointers to tensors that exist on a different machine 
+- pysft creates a worker and creates such interface into the local machine 
+- worker is a collection of objects 
+
+For federated learning on different machines:
+1. given the data is present on different machines
+2. we create the model and send the model to location of data
+3. perform iteration on data at each machine
+4. and get the model back
+5. this way our goal would be achieve however, one drawback of this approach is that it can be reversed engineered to see what changed in my model and using that you can actually tell what was the data from the user.
+6. one way to improve above thing would be to perform multiple iterations 
+
+
+Pointers
+- pointers are made when an object is send from a worker (a) to another worker (b) such that the worker b contains the pointer to the object (tensor) where as worker a contains the actual data (tensor). 
+Note that when you perform operations you have to make sure that the relationships agree
+
+remote_get() on an object with pointer is used to tell that object that get the data from the pointer onto its machine in a way that the data is not on the machine anymoree
+
+.move() function uses the remote_get function under the hood and performs the movement of data from one machine to anther

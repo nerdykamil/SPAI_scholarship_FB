@@ -1,0 +1,10 @@
+Encrypted Deep Learning
+- tells you how to predict on encrypted data when the model you are using is also encrypted
+
+Encrypted Subtraction, multiplication
+
+
+
+
+In Syft
+- crypto_provider = used for reliably generating random numbers

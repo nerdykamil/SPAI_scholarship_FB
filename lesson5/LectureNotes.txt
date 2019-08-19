@@ -1,0 +1,39 @@
+Differential Privacy
+
+1. Local Differential Privacy - adds noise to each individual data point
+2. Global Differential Privacy- adds noise to the function outputs, db contains all private information 
+
+Global differential privacy leads to same results with same level of privacy protection and requires db owner to be trustworty such a db owner is called db curator
+
+For local differencing - the question that arises is how much noise should we add
+
+Randomized Response: a technique used in social sciences to learn the high trends for a taboo behaviour
+
+Plausible deniability - 
+1. flip a coin two times
+2. if the first coin flip is a heads then you answer the question (yes/no) honestly
+3. if the first coin flip is a tails then you answer the question according to the second coin flip
+
+
+Differential privacy always requires randomness or noise added to avoid differecning attack
+
+Biased noise/randomness added to the data
+
+What is a differentially private mechanism: aa mechanism that study a dataset and filter out the umique information in the dataset and keep the information that is consistent across the dataset
+
+Epsilon = tells us how much leakage is there between the query/algo on whole data vs whole data -1 entry 
+delta = tells how much probability of min leakage is there that means there is accidently going to be this more leakage then this amount of epsilon
+
+Types of global noise = gaussian and laplacian
+how much noise should we add, depends on 4 things
+1. type of noise
+2. sensitivity of query
+3. desired epsilon
+4. desired delta
+
+- each type of noise has a different function for how much noise should be added
+- Laplacian noise has beta, where beta = sensitivity(query)/epsilon
+- delta is always 0 for laplacian
+- gaussian noise has non zero delta
+- function to add laplacian noise is np.random.laplace
+

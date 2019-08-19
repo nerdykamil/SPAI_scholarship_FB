@@ -1,0 +1,11 @@
+Trusted Aggregator
+- a trusted party who we can trust to not see the the gradients when performing the aggregation.
+
+Additive Secret Sharing - a form of cryptography
+- aggregating gradients in an encrypted state rather than trusting a third party with it
+- it is a simple technique which allows individuals to add the numbers together without one person learning the inputs of others
+
+Fixed Precision Encoding
+- used for decimal numbers as the above method deals with integers only
+
+The above two methods of encoding have been properly implemented in pysyft with proper methods and functions. (See Section3 securing Federated Learning for this)

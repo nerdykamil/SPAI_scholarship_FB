@@ -1,0 +1,23 @@
+Privacy in deep learning would be:
+    training a model on a dataset should return the same model even when you remove an entry from the dataset
+
+Complexity in deep learning models:
+1. Not sure where exactly people have been referenced in the dataset (solution: consider each training example as a separate person)
+2. The state of the models in neural networks change on each training process even if it is on same data
+
+
+Understanding how to secure privact when training models (scenario):
+1. Suppose you have images of patients in your hospital and you want to train a classifier but they aren't labeled
+2. other hospitals have labeled images but they are skeptical to give you data because of privacy concern
+3. you follow following steps to ensure privacy:
+    a. you ask each of the 10 partner hospitals to train a model on the dataset
+    b. use these models to predict on your local dataset (so now you have 10 labels for each datapoint)
+    c. Perform a differentially private query for each datapoint which could be a max function on all labels
+    d. add laplacian noise
+
+
+PATE Analysis:
+In PATE analysis when you have results from different models, you have a core assumption that the each model is not based on one single person but a group of people and the result would remain same if that person was removed.
+PATE analysis allows you take a peak at all the models and see how much do they agree if they agree too much then the epsilon level is really really low. so the PATE analysis is capable of computing how much epsilon is dependent on this level of agreement (present in pysyft)
+PATE analysis - returns two things data_dependent_epsilon (which tells us how much agreement these two have) and the other is data_independent_epsilon which is a simpler epsilon
+if both of these are equal which shows that there is

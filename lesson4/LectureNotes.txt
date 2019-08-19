@@ -1,0 +1,11 @@
+- We will query our database and evaluate whether the result is leaking private information
+- this would be when the output of the query changes when you remove somone from the database
+
+Sensitivity: (or L1 Sensitivity)
+The max amount a query changes when removing an individual from the database is called sensitivity
+
+- it is usually easier to protect privacy when the information to the query is controbuted from multiple people and not just one individual
+
+- sensitivity can be fixed or varaible across multiple databases where each database corresponds to a view where a person has been removed
+
+- Differential privacy: when the privacy of a person is compromised by doing a reverse query on the data with and without that person and noting the result
